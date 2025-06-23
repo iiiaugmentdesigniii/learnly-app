@@ -1,0 +1,47 @@
+{% extends "learnlyapp/base.html" %}
+
+
+
+{% load static %}
+<!-- <link rel="stylesheet" href="{% static 'css/login.css' %}"> -->
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        
+        <div class="col-12 text-center">
+            <div>
+                <h1>
+                    <a class="nav-link " href="{% url 'login' %}">Learnly Training App
+                    </a>
+                </h1>
+                <div class="">
+                    <img src="{% static 'images/learnly-removebg-preview.png' %}" alt="Learnly Logo" class=" mx-auto d-block imagesize">
+                </div>
+                <p class="">
+                    Login
+                </p>
+                <hr>
+                <form action="/login" method="POST">
+                    <div>
+                        <input type="text" name="username" placeholder="Enter Username"><br>
+                    </div>
+                    <br>
+                    <div>
+                    <input type="password" name="password" placeholder="Enter Password"><br>
+                    </div>
+                    <br>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}

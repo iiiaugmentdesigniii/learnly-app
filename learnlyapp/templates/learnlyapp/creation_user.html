@@ -1,0 +1,77 @@
+{% extends "learnlyapp/base.html" %}
+
+{% block title %}About Us{% endblock %}
+{% load static %}
+<!-- <link rel="stylesheet" href="{% static 'css/login.css' %}"> -->
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+
+{% block content %}
+<br>
+    <div class="container">
+    <div class="row">
+        
+        <div class="col-12 text-center">
+            <div>
+                <h1>Create User</h1>
+            </div>
+            <br>
+            
+            <form action="/login" method="POST">
+                <div>
+                    <input type="text" name="username" placeholder="Enter Username">
+                </div>
+                <br>
+                <div>
+                    <input type="text" name="firstname" placeholder="Enter First Name"><br>
+                </div>
+                <br>
+                <div>
+                    <input type="text" name="lastname" placeholder="Enter Last Name"><br>
+                </div>
+                <br>
+                <div>
+                    <input type="text" name="email" placeholder="Enter Email"><br>
+                </div>
+                <br>
+                <div>
+                    <input type="text" name="password" placeholder="Enter Password"><br>
+                </div>
+                <br>
+                <div>
+                    <input type="text" name="passwordconfirm" placeholder="Confirm Your Password"><br>
+                </div>
+                <br>
+                <div>
+                    <input type="text" name="worktype" placeholder="Enter Work Role"><br>
+                </div>
+                <br>
+                
+                <div class="dropdown">
+                    <button id="dropdownButton" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        Job Role
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" onclick="updateDropdown('Manager')">Manager</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="updateDropdown('Trainer')">Trainer</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="updateDropdown('Employee')">Employee</a></li>
+                    </ul>
+                </div>
+            </form>
+            <br>
+            <button class="btn btn-primary dropdown-toggle" type="submit">Send Email
+                </button>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<!-- this below changes the name on the Job Role Button, change if needed-->
+<script>
+    function updateDropdown(selectedText) {
+        document.getElementById("dropdownButton").innerText = selectedText;
+    }
+</script>
+{% endblock %}
